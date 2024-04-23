@@ -218,7 +218,7 @@ main p {
   width: 25px;
   height: 3px;
   background-color: #fff;
-  margin-bottom:  5px auto;
+  margin:  5px auto;
   transition: transform 0.3s, opacity 0.3s;
 }
 
