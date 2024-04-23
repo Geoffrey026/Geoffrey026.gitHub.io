@@ -1,3 +1,4 @@
+/* Common styles for navbar and hamburger menu */
 body, h1, h2, p, nav, header, footer {
   margin: 0;
   padding: 0;
@@ -17,8 +18,7 @@ header {
 
 header h1 {
   margin: 0;
-  font-size: 24x; 
-   
+  font-size: 24px; /* Corrected typo from 24x to 24px */
 }
 
 nav {
@@ -32,27 +32,79 @@ nav .container {
   justify-content: center; 
 }
 
-nav a {
+.nav-links {
+  display: flex; /* Ensure the links are in a block */
+}
+
+.nav-links a {
   color: #fff;
   text-decoration: none;
-  margin: 0 10px;
-  padding: 10px 20px; 
-  border-radius: 5px; 
-
+  margin-right: 20px; /* Add right margin to create space between links */
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s; /* Add transition effect for hover */
 }
+
+.nav-links a:hover {
+  background-color: #444; /* Change background color on hover */
+}
+
 
 nav a:hover {
   background-color: #444; 
+}
+
+/* Styles for desktop and laptop screens */
+@media (min-width: 769px) {
+  .hamburger-menu {
+    display: none; /* Hide the hamburger menu on larger screens */
+  }
+}
+
+/* Styles for tablets and phones */
+@media (max-width: 768px) {
+  nav {
+    display: none; /* Hide the regular navbar on smaller screens */
+  }
+
+  .hamburger-menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: block; /* Display the hamburger menu on smaller screens */
+    z-index: 999; /* Ensure the hamburger menu is on top */
+    cursor: pointer;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Initially hide the navigation links off-screen */
+    width: 250px; /* Set the width of the navigation links */
+    height: 100vh; /* Make the navigation links cover the entire viewport */
+    background-color: #262229; /* Background color for the navigation links */
+    padding-top: 60px; /* Add padding for better spacing */
+    transition: left 0.3s ease; /* Add a smooth transition for the sliding effect */
+    display: none; /* Hide the navigation links by default */
+  }
+
+  .nav-links.active {
+    left: 0; /* Slide in the navigation links from the left */
+    display: block; /* Show navigation links when hamburger menu is active */
+  }
 }
 
 main {
   padding: 20px;
   margin-bottom: 20px;
 }
+
+/* Additional styles as per your existing CSS */
 /*space for h2*/
 main h2 {
   margin-bottom: 15px; 
 }
+
 /*space for p*/
 main p {
   margin-bottom: 10px;
@@ -60,17 +112,51 @@ main p {
 
 /*for gallery page*/
 .gallery {
-  display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  gap: 16px;
+  max-width: 800px;
+  padding: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
 }
 
-.gallery img {
-  margin: 10px;
-  border: 2px solid #333;
-  border-radius: 5px;
-  width: 200px; 
-  height: auto;
+.image-container {
+  flex: 1 1 calc(50% - 80px);
+  box-sizing: border-box;
+  position: relative;
+  margin-bottom: 20px;
+  border: 2px solid white;
+  border-radius: 10px;
+  height: 320px; 
+  overflow: hidden;
+  transition: all 0.3s ease;
+  padding: 5px;
+}
+
+.image-container img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.image-container img:hover {
+  transform: scale(1.05);
+  border-width: 4px;
+}
+
+@media (max-width: 768px) {
+  .image-container {
+    flex: 1 1 calc(50% - 16px); 
+  }
+}
+
+@media (max-width: 480px) {
+  .image-container {
+    flex: 1 1 100%; 
+  }
 }
 
 /*for blog*/
@@ -130,12 +216,6 @@ main p {
   background-size: cover;
   background-position: center;
 }
-
-
-
-
-
-
 
 footer {
   background-color: #262229;
