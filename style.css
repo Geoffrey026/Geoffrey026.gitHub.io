@@ -1,13 +1,15 @@
-body, h1, h2, p, nav, header, footer {
-  margin: 0;
-  padding: 0;
-}
-
+/* General Styles */
 body {
-  background-color: #313F41;
+  font-family: 'Poppins', sans-serif;
+  background-color: #1f2833;
   color: #fff; 
+  background: url('image/5570834.jpg') no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding-bottom: 100px; 
 }
 
+/* Header Styles */
 header {
   background-color: #262229;
   color: #fff;
@@ -18,8 +20,10 @@ header {
 header h1 {
   margin: 0;
   font-size: 24px; 
+  color: #fff;
 }
 
+/* Navigation Styles */
 nav {
   background-color: #262229;
   text-align: center;
@@ -48,19 +52,13 @@ nav .container {
   background-color: #444; 
 }
 
-
-nav a:hover {
-  background-color: #444; 
-}
-
-/*laptop & desktop*/
+/* Responsive Navigation Styles */
 @media (min-width: 769px) {
   .hamburger-menu {
     display: none; 
   }
 }
 
-/*hp*/
 @media (max-width: 768px) {
   .nav-links {
     display: none; 
@@ -90,24 +88,25 @@ nav a:hover {
   .nav-links.active {
     right: 0; 
     display: block;
+  }
 }
-}
+
+/* Main Styles */
 main {
   padding: 20px;
   margin-bottom: 20px;
 }
 
-
 main h2 {
   margin-bottom: 15px; 
+  color: #fff;
 }
-
 
 main p {
   margin-bottom: 10px;
 }
 
-
+/* Gallery Styles */
 .gallery {
   flex-wrap: wrap;
   gap: 16px;
@@ -125,7 +124,7 @@ main p {
   margin-bottom: 20px;
   border: 2px solid white;
   border-radius: 10px;
-  height: 320px; 
+  height: 300px; 
   overflow: hidden;
   transition: all 0.3s ease;
   padding: 5px;
@@ -156,7 +155,8 @@ main p {
   }
 }
 
-/*for blog*/
+
+/* Blog Styles */
 .article-list {
   display: flex;
   flex-direction: column;
@@ -187,8 +187,8 @@ main p {
   color: #ffffff; 
 }
 
- /*article1*/
- #article-1 {
+/* Article Backgrounds */
+#article-1 {
   background-image: url("image/272670135_457353172674433_8520205712322245116_n.jpg");
   background-color: #313F41;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('image/272670135_457353172674433_8520205712322245116_n.jpg');
@@ -196,8 +196,7 @@ main p {
   background-position: center;
 }
 
- /*article2*/
- #article-2 {
+#article-2 {
   background-image: url("image/271824016_446477027095381_7338996766588925329_n.jpg");
   background-color: #313F41;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('image/271824016_446477027095381_7338996766588925329_n.jpg');
@@ -205,7 +204,6 @@ main p {
   background-position: center;
 }
 
-/*article3*/
 #article-3 {
   background-image: url("image/273892941_467040171705733_2116102586391199808_n.jpg");
   background-color: #313F41;
@@ -214,14 +212,14 @@ main p {
   background-position: center;
 }
 
+/* Hamburger Menu Styles */
 .bar {
   width: 25px;
   height: 3px;
   background-color: #fff;
-  margin:  5px auto;
+  margin: 5px auto;
   transition: transform 0.3s, opacity 0.3s;
 }
-
 
 .change .bar:nth-child(1) {
   transform: rotate(-45deg) translate(5px, 6px); 
@@ -235,6 +233,7 @@ main p {
   transform: rotate(45deg) translate(5px, -6px); 
 }
 
+/* Footer Styles */
 footer {
   background-color: #262229;
   color: #fff;
@@ -243,4 +242,68 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+/* Home page */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+.text-container {
+  max-width: 50%;
+  text-align: left;
+}
+
+.text-container h1 {
+  font-size: 2rem;
+  color: #e2e2e2;
+}
+
+.text-container h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.text-container p {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.Home-image-container {
+  margin-left: 150px;
+}
+
+
+.Home-image-container img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+}
+
+a img {
+  width: 50px;
+  height: auto;
+}
+
+
+
+.about-container {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.about-container h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-container p {
+  font-size: 1.2rem;
+  line-height: 1.5;
 }

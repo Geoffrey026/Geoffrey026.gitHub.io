@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Gallery</h1>
+    <nav>
+      <div class="hamburger-menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="gallery.php">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="blog.html">Blog</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <h2>My Gallery</h2>
+    <div class="gallery">
+      <div class="image-container">
+        <img src="image/20231026_165604.jpg" />
+      </div>
+      <div class="image-container">
+        <img src="image/20231229_170524.jpg" />
+      </div>
+      <div class="image-container">
+        <img src="image/20240302_063007.jpg" />
+      </div>
+      <div class="image-container">
+        <img src="image/20240313_151435.jpg" />
+      </div>
+    </div>
+    <?php include 'display_images.php'; ?>
+
+    <h3>Upload New Image</h3>
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+      Select image to upload:
+      <input type="file" name="fileToUpload" id="fileToUpload" />
+      <input type="submit" value="Upload Image" name="submit" />
+    </form>
+
+
+
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Geoffrey Matantu Web Page.</p>
+  </footer>
+</body>
+<script src="script.js"></script>
+
+</html>
